@@ -27,7 +27,7 @@ class Pizza(db.Model, SerializerMixin):
     created_at = db.Column(db.DateTime, server_default=db.func.now())
     updated_at = db.Column(db.DateTime, onupdate=db.func.now())
 
-    reviews = db.relationship('RestaurantPizza', backref='pizza')
+    restaurantpizzas = db.relationship('RestaurantPizza', backref='pizza')
 
     def __repr__(self):
         return f'<Pizza {self.name} for {self.ingredients}>'
