@@ -13,7 +13,7 @@ class Restaurant(db.Model, SerializerMixin):
     name = db.Column(db.String)
     address = db.Column(db.String)
 
-    reviews = db.relationship('RestaurantPizza', backref='restaurant')
+    restaurantpizzas = db.relationship('RestaurantPizza', backref='restaurant')
 
 
 class Pizza(db.Model, SerializerMixin):
